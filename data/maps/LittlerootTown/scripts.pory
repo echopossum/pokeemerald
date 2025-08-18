@@ -1016,3 +1016,8 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "Let's go to my LAB.$"
 
 `
+script LittlerootTown_EventScript_CreatorHouse_Sign {
+	lockall
+	msgbox("Echo's House")
+	releaseall
+}

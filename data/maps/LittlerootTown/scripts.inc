@@ -2030,3 +2030,17 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 # 1016 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
+
+LittlerootTown_EventScript_CreatorHouse_Sign::
+# 1020 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1021 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_EventScript_CreatorHouse_Sign_Text_0
+# 1022 "data/maps/LittlerootTown/scripts.pory"
+	releaseall
+	return
+
+
+LittlerootTown_EventScript_CreatorHouse_Sign_Text_0:
+# 1021 "data/maps/LittlerootTown/scripts.pory"
+	.string "Echo's House$"

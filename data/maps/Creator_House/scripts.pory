@@ -1,4 +1,56 @@
-raw `
-Creator_House_MapScripts::
-	.byte 0
-`
+mapscripts Creator_House_MapScripts {}
+
+script CreatorHouse_EventScript_Pokeball{
+	lockall
+	showmonpic(SPECIES_ARON,10,3)
+	msgbox("Do you want to choose Aron?", MSGBOX_YESNO)
+	if(var(VAR_RESULT) == "YES"){
+		givemon(SPECIES_ARON, 50, ITEM_MASTER_BALL)
+		if (var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox("Received Aron")
+			removeobject(1)
+			setflag(LITTLEROOT_ARON)
+			call(NicknamePartyMon)
+		}
+		elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+			playfanfare(MUS_OBTAIN_ITEM)
+			msgbox("Received Aron")
+			removeobject(1)
+			setflag(LITTLEROOT_ARON)
+			call(NicnameBoxMon)
+		}
+		else{
+			hidemonpic
+			msgbox("No More Room")
+		}
+	}
+	else{
+		hidemonpic
+		msgbox(CreatorHouse_NotChosen)
+	}
+	waitmessage
+	releaseall
+	end
+}
+
+script NicknamePartyMon{
+	msgbox("Give it a nickname?",MSGBOX_YESNO)
+	if(var(VAR_RESULT)== YES){
+		call(Common_EventScript_GetGiftMonPartySlot)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
+}
+
+script NicnameBoxMon{
+	msgbox("Give it a nickname?", MSGBOX_YESNO)
+	hidemonpic
+	if(var(VAR_RESULT)== YES){
+		call(Common_EventScript_NameReceivedBoxMon)
+	}
+	call(Common_EventScript_TransferredToPC)
+}
+
+text CreatorHouse_NotChosen{
+	"You did not take the Aron"
+}
