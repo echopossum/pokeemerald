@@ -18,8 +18,10 @@ CreatorHouse_EventScript_Pokeball::
 	msgbox CreatorHouse_NotChosen
 CreatorHouse_EventScript_Pokeball_1:
 # 32 "data/maps/Creator_House/scripts.pory"
-	waitmessage
+	hidemonpic
 # 33 "data/maps/Creator_House/scripts.pory"
+	waitmessage
+# 34 "data/maps/Creator_House/scripts.pory"
 	releaseall
 	end
 
@@ -66,36 +68,36 @@ CreatorHouse_EventScript_Pokeball_6:
 
 
 NicknamePartyMon::
-# 38 "data/maps/Creator_House/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 39 "data/maps/Creator_House/scripts.pory"
+	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+# 40 "data/maps/Creator_House/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 40 "data/maps/Creator_House/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
 # 41 "data/maps/Creator_House/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 42 "data/maps/Creator_House/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicnameBoxMon::
-# 46 "data/maps/Creator_House/scripts.pory"
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 47 "data/maps/Creator_House/scripts.pory"
-	hidemonpic
+	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
 # 48 "data/maps/Creator_House/scripts.pory"
+	hidemonpic
+# 49 "data/maps/Creator_House/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicnameBoxMon_2
 NicnameBoxMon_1:
-# 51 "data/maps/Creator_House/scripts.pory"
+# 52 "data/maps/Creator_House/scripts.pory"
 	call Common_EventScript_TransferredToPC
 	return
 
 NicnameBoxMon_2:
-# 49 "data/maps/Creator_House/scripts.pory"
+# 50 "data/maps/Creator_House/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicnameBoxMon_1
 
@@ -113,9 +115,9 @@ CreatorHouse_EventScript_Pokeball_Text_2:
 	.string "No More Room$"
 
 NicknamePartyMon_Text_0:
-# 38 "data/maps/Creator_House/scripts.pory"
+# 39 "data/maps/Creator_House/scripts.pory"
 	.string "Give it a nickname?$"
 
 CreatorHouse_NotChosen::
-# 54 "data/maps/Creator_House/scripts.pory"
+# 55 "data/maps/Creator_House/scripts.pory"
 	.string "You did not take the Aron$"

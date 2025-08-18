@@ -29,6 +29,7 @@ script CreatorHouse_EventScript_Pokeball{
 		hidemonpic
 		msgbox(CreatorHouse_NotChosen)
 	}
+	hidemonpic
 	waitmessage
 	releaseall
 	end

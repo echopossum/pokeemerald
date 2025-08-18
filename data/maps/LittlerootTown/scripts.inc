@@ -2041,6 +2041,133 @@ LittlerootTown_EventScript_CreatorHouse_Sign::
 	return
 
 
+LitlerootTown_EventScript_Jeff::
+# 1026 "data/maps/LittlerootTown/scripts.pory"
+	faceplayer
+# 1027 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1028 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LitlerootTown_EventScript_Jeff_Text_0
+# 1029 "data/maps/LittlerootTown/scripts.pory"
+	releaseall
+	end
+
+
+LittlerootTown_EventScript_Rayquaza::
+# 1050 "data/maps/LittlerootTown/scripts.pory"
+	lockall
+# 1051 "data/maps/LittlerootTown/scripts.pory"
+	setflag LITTLEROOT_JIRACHI
+# 1052 "data/maps/LittlerootTown/scripts.pory"
+	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
+# 1053 "data/maps/LittlerootTown/scripts.pory"
+	delay 40
+# 1054 "data/maps/LittlerootTown/scripts.pory"
+	waitmoncry
+# 1055 "data/maps/LittlerootTown/scripts.pory"
+	setwildbattle SPECIES_RAYQUAZA, 15, ITEM_BLUE_ORB
+# 1056 "data/maps/LittlerootTown/scripts.pory"
+	dowildbattle
+# 1057 "data/maps/LittlerootTown/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 1058 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq LittlerootTown_EventScript_Rayquaza_2
+# 1061 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq LittlerootTown_EventScript_Rayquaza_3
+# 1064 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq LittlerootTown_EventScript_Rayquaza_4
+# 1067 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq LittlerootTown_EventScript_Rayquaza_5
+LittlerootTown_EventScript_Rayquaza_1:
+# 1070 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1071 "data/maps/LittlerootTown/scripts.pory"
+	releaseall
+	return
+
+LittlerootTown_EventScript_Rayquaza_2:
+# 1059 "data/maps/LittlerootTown/scripts.pory"
+	call Won_or_Caught
+	goto LittlerootTown_EventScript_Rayquaza_1
+
+LittlerootTown_EventScript_Rayquaza_3:
+# 1062 "data/maps/LittlerootTown/scripts.pory"
+	call Won_or_Caught
+	goto LittlerootTown_EventScript_Rayquaza_1
+
+LittlerootTown_EventScript_Rayquaza_4:
+# 1065 "data/maps/LittlerootTown/scripts.pory"
+	call RunAway
+	goto LittlerootTown_EventScript_Rayquaza_1
+
+LittlerootTown_EventScript_Rayquaza_5:
+# 1068 "data/maps/LittlerootTown/scripts.pory"
+	call RunAway
+	goto LittlerootTown_EventScript_Rayquaza_1
+
+
+Won_or_Caught::
+# 1075 "data/maps/LittlerootTown/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 1076 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 10
+# 1077 "data/maps/LittlerootTown/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 1078 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Won_or_Caught_Text_0
+	return
+
+
+RunAway::
+# 1083 "data/maps/LittlerootTown/scripts.pory"
+	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
+# 1084 "data/maps/LittlerootTown/scripts.pory"
+	msgbox RunAway_Text_0, MSGBOX_AUTOCLOSE
+# 1085 "data/maps/LittlerootTown/scripts.pory"
+	delay 20
+# 1086 "data/maps/LittlerootTown/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 1087 "data/maps/LittlerootTown/scripts.pory"
+	removeobject 10
+# 1088 "data/maps/LittlerootTown/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 1089 "data/maps/LittlerootTown/scripts.pory"
+	msgbox RunAway_Text_1
+	return
+
+
 LittlerootTown_EventScript_CreatorHouse_Sign_Text_0:
 # 1021 "data/maps/LittlerootTown/scripts.pory"
 	.string "Echo's House$"
+
+LitlerootTown_EventScript_Jeff_Text_0:
+# 1028 "data/maps/LittlerootTown/scripts.pory"
+	.string "Hello my name is Jeff$"
+
+Won_or_Caught_Text_0:
+# 1078 "data/maps/LittlerootTown/scripts.pory"
+	.string "You are the Pokemon Master$"
+
+RunAway_Text_0:
+# 1084 "data/maps/LittlerootTown/scripts.pory"
+	.string "Quaaa...$"
+
+RunAway_Text_1:
+# 1089 "data/maps/LittlerootTown/scripts.pory"
+	.string "You are not the Pokemon Master$"
+
+Jeff_Intro::
+# 1036 "data/maps/LittlerootTown/scripts.pory"
+	.string "Hello my name is Jeff$"
+
+Jeff_Outro::
+# 1040 "data/maps/LittlerootTown/scripts.pory"
+	.string "You're pretty strong$"
+
+Jeff_PostBattle::
+# 1044 "data/maps/LittlerootTown/scripts.pory"
+	.string "Next time I'll win for sure$"
