@@ -2047,8 +2047,14 @@ LitlerootTown_EventScript_Jeff::
 # 1027 "data/maps/LittlerootTown/scripts.pory"
 	lockall
 # 1028 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LitlerootTown_EventScript_Jeff_Text_0
+	trainerbattle_single TRAINER_JEFF_LITTLEROOT, Jeff_Intro, Jeff_Outro
 # 1029 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Jeff_PostBattle, MSGBOX_AUTOCLOSE
+# 1030 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1031 "data/maps/LittlerootTown/scripts.pory"
+	setflag LITTLEROOT_JEFF_BATTLE
+# 1032 "data/maps/LittlerootTown/scripts.pory"
 	releaseall
 	end
 
@@ -2143,10 +2149,6 @@ RunAway::
 LittlerootTown_EventScript_CreatorHouse_Sign_Text_0:
 # 1021 "data/maps/LittlerootTown/scripts.pory"
 	.string "Echo's House$"
-
-LitlerootTown_EventScript_Jeff_Text_0:
-# 1028 "data/maps/LittlerootTown/scripts.pory"
-	.string "Hello my name is Jeff$"
 
 Won_or_Caught_Text_0:
 # 1078 "data/maps/LittlerootTown/scripts.pory"

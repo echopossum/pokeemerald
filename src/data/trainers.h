@@ -10260,4 +10260,15 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_MayLinkPlaceholder),
     },
+    [TRAINER_JEFF_LITTLEROOT] =
+    {
+        .trainerClass = TRAINER_CLASS_COLLECTOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = _("JEFF"),
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_HEAL, ITEM_FULL_HEAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .party = ITEM_CUSTOM_MOVES(sParty_Littleroot_Jeff),
+    },
 };

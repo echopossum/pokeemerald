@@ -1025,11 +1025,11 @@ script LittlerootTown_EventScript_CreatorHouse_Sign {
 script LitlerootTown_EventScript_Jeff{
 	faceplayer
 	lockall
-	msgbox("Hello my name is Jeff")
+	trainerbattle_single(TRAINER_JEFF_LITTLEROOT, Jeff_Intro, Jeff_Outro)
+	msgbox(Jeff_PostBattle, MSGBOX_AUTOCLOSE)
+	waitmessage
+	setflag(LITTLEROOT_JEFF_BATTLE)
 	releaseall
-	// trainerbattle_single(TRAINER_MAY_ROUTE_103_TORCHIC, Jeff_Intro, Jeff_Outro)
-	// msgbox(Jeff_PostBattle, MSGBOX_AUTOCLOSE)
-	// waitmessage
 	end
 }
 

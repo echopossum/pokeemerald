@@ -12434,3 +12434,47 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+static const struct TrainerMonItemCustomMoves sParty_Littleroot_Jeff[] = {
+    {
+    .iv = 255,
+    .lvl = 46,
+    .species = SPECIES_SWAMPERT,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_HYDRO_PUMP, MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_FOCUS_PUNCH}
+    },
+    {
+    .iv = 255,
+    .lvl = 48,
+    .species = SPECIES_GARDEVOIR,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_WILL_O_WISP}
+    },
+    {
+    .iv = 250,
+    .lvl = 48,
+    .species = SPECIES_SHIFTRY,
+    .heldItem = ITEM_MIRACLE_SEED,
+    .moves = {MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_HIDDEN_POWER, MOVE_EXPLOSION}
+    },
+    {
+    .iv = 255,
+    .lvl = 49,
+    .species = SPECIES_ALTARIA,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_FLAMETHROWER, MOVE_REST}
+    },
+    {
+    .iv = 255,
+    .lvl = 49,
+    .species = SPECIES_NINETALES,
+    .heldItem = ITEM_CHARCOAL,
+    .moves = {MOVE_FLAMETHROWER, MOVE_WILL_O_WISP, MOVE_OVERHEAT, MOVE_HYPNOSIS}
+    },
+    {
+    .iv = 255,
+    .lvl = 50,
+    .species = SPECIES_AGGRON,
+    .heldItem = ITEM_CHOICE_BAND,
+    .moves = {MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_DOUBLE_EDGE, MOVE_FOCUS_PUNCH}
+    },
+};
